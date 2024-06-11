@@ -1,0 +1,272 @@
+Network - Group or system of interconnected device.
+
+Computer Networks - Bunch of computers connected to each other. We need to share files and informations.
+
+Internet - Network of computer networks. Complex web of interconnected computer networks.
+
+### History of Computer Networks.
+
+1957 - SOviet Union(Russia) launchedfirst satellite - Sputnik.
+
+Later USA launched ARPA (Advanced Research Project Agency) for scientific advancement and research.
+Computers were not able to share information among each other.
+
+1969 - 1970 - ARPA build a communication system for ARPA computers.
+
+1969 - ARPANET launched and computers can talk to each other.
+
+1980 - Started to move from only Transmission Control Protocol to only TCP/IP. ARPANET is started called as Internet.
+
+1990 - CERN researcher also fnds the needs to internet. They started using Hyperlink based documents one file is linked with other document. In 1990 _Tim Bernerlee_ introduced WWW was founded and used the hyperlink based communication.
+
+Initial browser that supports www is Mosaic and Netscape.
+
+### Terminologies in Computer Networks.
+
+Protocols are set of rules and regulations setup to communicate and share information over the network.
+Example - HTTP, UDP, TCP, SMTP.
+
+**Packets** - Sharing data with two device is send in small packets and not the big chunk of data over the network.
+
+Small data packets are easy to manage and if one packet is lost we can get the individual one and get the one that is not received. If we were using big data then we need to send the entire file.
+
+**Address** - Seding messages over the network requires the destination details. This details uniquely identify the end system it is called Address. Example - IP address.
+
+**Port** - Any machine could be running many network application. Inorder to distinguish these apps for recieving messages uses ports number.
+
+Port helps you to get the package to specific process on the host.
+
+IP Address + Port = Socket.
+
+Every process has a 16 bits port number.
+
+Range of port numbers - 0 to 2^(16) = 0 to 65535.
+
+Well known ports - 0 to 1023. As per protocol these ports are already used in any of the application. Port is already reserved for specific pplication.
+
+Like port 80 is for HTTP. Port 443 - HTTPS.
+
+Registered ports - 1024 to 49152. They are used by specific potential propritory apps/ process that are known but not system defined.
+
+Like 3000, 3001 - for node js start project.
+SQL Server uses the port 1433.
+MongoDb port - 27017.
+
+Dynamic ports - 49152 to 65535. These are for future purpose and we can use for out services.
+
+### Access Network and DSL.
+
+Access Network - These are media using which end systems connect to the internet.
+
+Device used to connect to internet.
+Example- Wifi, Cable connector.
+
+End System - Final client system like the mobile or the network that are using the service.
+
+**Network Interface Adapter** - It enables a computer to attach to a network. As there are different type of networks, it acts as a single suit to connect to any network.
+
+DSL - Digital Subscriber Line.
+
+DSL uses the existing telephone groundwork lines for internet connection. DSL is provided by the same company which supplies telephone services.
+
+ISP - Internet Service Provider.
+
+It is a company that provide end users internet. Example AT&T.
+
+### Protocol Stack. OSI Model.
+
+2 model - OSI (7 layer) and TCP/IP (5 layer).
+
+OSI Protocol Stack.
+
+Application Layer.
+Presentation.
+Session.
+Transport.
+Network.
+Data Link.
+Physical.
+
+TCP/IP Protocol Stack.
+Application Layer.
+Transport.
+Network.
+Data Link.
+Physical.
+
+When sender sends the message then it goes from Application layer to the Physical Layer and when the receiver send the message it goes from the physical layer to the application layer.
+
+Application Layer - End application like email server, chat server from where we send the message. A few examples of application layer protocols are the Hypertext Transfer Protocol (HTTP), File Transfer Protocol (FTP), Post Office Protocol (POP), Simple Mail Transfer Protocol (SMTP), and Domain Name System (DNS).
+
+Presentation - Presentation of data, compression and excryption.
+
+Session - User session management.
+
+Transport - Divides big chunk of data coming from above to small chunk and manage the chunk.
+
+Network - Handlesrouting of pacakage will be done on the network.
+
+Data Link - Error/Flow control, multiplexing and demultiplexing and handle addressing.
+
+Physical - Data comes in electronic forms.
+
+### Introduction about application.
+
+Roles - Writing / providing data off to the network.
+
+Reading the data from user.
+
+Contains applications that helps users to interact on the network.
+
+Error handling(user put error format of the data) and recovery can also be done.
+
+### Details about the application layer.
+
+Client Server Architecture.
+
+Peer To Peer Architecture.
+Example Torrent.
+No single server. There are multiple end system involves and all are connected with each other.
+
+Decentralised system and every end points helps the other end points to get the resource.
+
+In torrent there is nothing like a server and a file is hosted on a system and other system get the file from the device.
+
+Hybrid Atchitecture.
+
+### HTTP 1.
+
+Hyper Text meaning one file is attached with other file.
+
+When we need to share the hyper link type data then it comes under the protocol of HTTP.
+
+It defines the entire procedure on how the client and server will interact.
+
+HTTP is a stateless protocol. Server do not store any information about the client. If a client ask for smae data again and again the server will send it and server donot know that which client is asking for what data. In the development we need to set some level of protection to stop repeated request.
+
+### HTTP 2.
+
+Lot of application layer proticol depends on lower level protocol of transport layer. In the transport layer there are two main protocol - TCP and UDP. HTTP depends on TCP.
+
+There are 2 types of HTTP connection.
+Persistent HTT - Set the TCP and then set the HTTP then every time request send it will get the response.
+
+Non - persistent HTTP - When TCP set and HTTP sets then one time request and response will be send again the connection needsto be set.
+
+### HTTP 3.
+
+### Cookies.
+
+These are mainly concern towards privacy. HTTP is a sateless protocol but a lot of times user session is required. Server wants to know if you are logged in or not. In this case cookies is usefull.
+
+How cookies works?
+
+Cookies are unique identifies string. These are set by the server through http header.
+
+As soon as the cookies is stored it is sent along with subsequet http request to the same server.
+
+This allows server to know who is contacting it and hence server the content accordingly.
+
+Set - cookie header.
+
+When a server wants to set a cookie it include `set-cookies :value` in the http response.
+
+This value is shared in the cookie file of the browser.
+
+### SMTP.
+
+For executing the functionality of Email we use SMTP. Another protocol POP3 is also used in combination with SMTP. One is used to send email that are stored in the users inbox and other i used to retrieve emails send to the user.
+
+One protocol for sending and one for receiving.
+
+SMTP also uses TCP protocol from transport layer.
+
+Connection for SMTP is setup on port 85.
+
+How SMTP works?
+
+When an email is sent, it is sent to the senders SMTP server using SMTP protocol.
+The SMTP server paces teh email in the message queue.
+
+SMTP server initiate a connection with recievers SMTP server and conducts an initial SMTP handshake.
+
+Then it sends the mail to recipient SMTP server.
+
+The email is downloaded from recievers SMTP server and then te client shows the mail.
+
+SMTP - push protocol. It is used to send the email.
+To download the email. Pull protocol - POP3/IMAP. Getting the email from the server.
+
+The SMTP sender is offline then it tries to send the email again and again after some delta mins. It will stop after the threshold days.
+
+For any project we set the SMTP for spring project.
+
+### POP(Post Office Protocol) and IMAP(Internet Message Access Protocol).
+
+**POP3**
+POP3 download email in 4 phases.
+**Connect** - User agent will connect to POP3 (latest version) using the TCP in the connect phase.
+**Authorize** - It will authenticate with the user id and password.
+**Transaction** - The receuver will start recieving the email.
+**Update** - Server uodates all the email received. In the update state if user delete the mail then it will not be retrieved and deleted from the POP3 server. There is a buffer time if it is deleted from the server then it is not reverted.
+
+Two mode in POP3 - Download and keep. Download and delete.
+
+**IMAP**.
+
+Emails are kept on the server and not deleted.
+
+Local copies of the email are cached on each device.
+
+If the email is deleted by user manually then only it is deleted from the server.
+
+### DNS.
+
+Domain names are unique names that identifies a website and are mapped to an IP address. To get the mapping we use DNS.
+
+IP address is difficult to remember. DNS is the layer that helps to map Domain IP address.
+
+DNS look up is the process based on which domain to IP resolution is done.
+
+DNS is a heirarchy based system.
+cs.harward.edu
+Here we have thirdLevelDomain.secondLevelDomain.TopLevelDomain.
+
+First it will go with root server and then check the IP for .edu, .com, .io and then check for harvard, stanford and the check for cs, ece like that.
+
+Authoritative Server - Each organization with a public email or website should provide DNS records. The records can be stored on a dedicated DNS server owned by the organization or any third party.
+
+DNS is stored in the cache. Local DNS cache all mapping are cached so that query can be done faster. Done by Local resolver library.
+
+Local DNS is configured by DHCP protocol.
+
+### Torrent.
+
+It is a protocol for Peer To Peer file sharing. A Bit Torrent client is an application that uses this protocol.
+
+A bit torrent client requests files from multiple clients in parallel.
+
+The collection of collaborating clients are called 'Swarms'.
+When one client can download the file then other client caj also download the file from the client.
+
+When the client joins the swarm by downloading a .torrent file, gives info about the file,
+
+continuation.......
+
+### Transport Layer.
+
+### Reliable Data Transfer.
+
+### TCP.
+
+### DNS.
+
+### IP Addressing.
+
+### Classfull Addressing.
+
+### Classless Addressing.
+
+### IPv6.
+
+### Web Sockets.
